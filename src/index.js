@@ -2,6 +2,7 @@ var path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const handlebars = require('express-handlebars')
+const methodOverride = require('method-override')
 const { query } = require('express')
 const app = express()
 const port = 3000
@@ -22,6 +23,9 @@ app.use(morgan('combined'))
 
 //add img
 app.use(express.static(path.join(__dirname, 'public')))
+
+//PUT HTML
+app.use(methodOverride('_method'))
 
 //Template egine
 app.engine('hbs', 
