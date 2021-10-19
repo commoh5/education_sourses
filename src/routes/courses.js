@@ -8,5 +8,6 @@ router.post('/store', coursesControllers.store)
 router.get('/:slug', coursesControllers.show)
 router.get('/:id/edit', coursesControllers.edit)
 router.put('/:id', coursesControllers.update)
+router.delete('/:id', coursesControllers.destroy)
 
 module.exports = router
